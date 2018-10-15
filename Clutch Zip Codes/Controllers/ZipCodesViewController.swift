@@ -18,6 +18,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
     let API_KEY = ""
     
     var zipCodesToDisplay = [ZipCode]()
+    var selectedZipCode: Int?
     
     let testJSON : JSON = [
         "zip_codes": [
@@ -56,6 +57,27 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         updateZipData(json: testJSON)
+    }
+    
+    //I recommend -viewDidAppear:, since this generates animations. Generating animations in -viewWillAppear can lead to graphic artifacts, since you're not on the screen yet. Since you almost certainly want it every time you come on screen, -viewDidLoad is likely redundant (it happens every time the view is loaded from disk, which is somewhat unpredictable, so isn't a good place for visual effects).
+    override func viewDidAppear(_ animated: Bool) {
+        //Tell the textField to be the first responder when the view appears so the user can start typing right away
+        zipCodeTextField.becomeFirstResponder()
+    }
+    
+    @IBAction func goButtonPressed(_ sender: UIButton) {
+        if let input = zipCodeTextField.text, let inputValue = Int(input) {
+            //Data validation
+            let digitsArray = input.compactMap{ Int(String($0)) }
+            if digitsArray.count == 5 {
+                //Call API with inputValue
+                zipCodeTextField.resignFirstResponder()
+            } else {
+                let alert = UIAlertController(title: "Invalid Zip Code Format", message: "Zip code must be 5 digits (e.g. '21208')", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     //MARK: - JSON Parsing
