@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B498FD35A7B2313EBEB059F /* Pods_Clutch_Zip_Codes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4217E06011498F3A7A5C0F12 /* Pods_Clutch_Zip_Codes.framework */; };
+		91ADED9B21752C8300AD60A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADED9A21752C8300AD60A7 /* AppDelegate.swift */; };
+		91ADED9D21752C8300AD60A7 /* ZipCodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADED9C21752C8300AD60A7 /* ZipCodesViewController.swift */; };
+		91ADEDA021752C8300AD60A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91ADED9E21752C8300AD60A7 /* Main.storyboard */; };
+		91ADEDA221752C8400AD60A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91ADEDA121752C8400AD60A7 /* Assets.xcassets */; };
+		91ADEDA521752C8400AD60A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91ADEDA321752C8400AD60A7 /* LaunchScreen.storyboard */; };
+		91ADEDB02175374A00AD60A7 /* ZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADEDAF2175374A00AD60A7 /* ZipCode.swift */; };
+		91ADEDB221753A3E00AD60A7 /* ZipCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADEDB121753A3E00AD60A7 /* ZipCodeCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4217E06011498F3A7A5C0F12 /* Pods_Clutch_Zip_Codes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clutch_Zip_Codes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52A3781D882B83332CF85D15 /* Pods-Clutch Zip Codes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clutch Zip Codes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clutch Zip Codes/Pods-Clutch Zip Codes.release.xcconfig"; sourceTree = "<group>"; };
+		53F9DF555AA9B4F1D14A5369 /* Pods-Clutch Zip Codes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clutch Zip Codes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clutch Zip Codes/Pods-Clutch Zip Codes.debug.xcconfig"; sourceTree = "<group>"; };
+		91ADED9721752C8300AD60A7 /* Clutch Zip Codes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clutch Zip Codes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		91ADED9A21752C8300AD60A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		91ADED9C21752C8300AD60A7 /* ZipCodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodesViewController.swift; sourceTree = "<group>"; };
+		91ADED9F21752C8300AD60A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		91ADEDA121752C8400AD60A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		91ADEDA421752C8400AD60A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		91ADEDA621752C8400AD60A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91ADEDAF2175374A00AD60A7 /* ZipCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCode.swift; sourceTree = "<group>"; };
+		91ADEDB121753A3E00AD60A7 /* ZipCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		91ADED9421752C8300AD60A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B498FD35A7B2313EBEB059F /* Pods_Clutch_Zip_Codes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00FFEADD38EF367C8A3F232B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4217E06011498F3A7A5C0F12 /* Pods_Clutch_Zip_Codes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5903077224847C34CF70C0FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53F9DF555AA9B4F1D14A5369 /* Pods-Clutch Zip Codes.debug.xcconfig */,
+				52A3781D882B83332CF85D15 /* Pods-Clutch Zip Codes.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		91ADED8E21752C8300AD60A7 = {
+			isa = PBXGroup;
+			children = (
+				91ADED9921752C8300AD60A7 /* Clutch Zip Codes */,
+				91ADED9821752C8300AD60A7 /* Products */,
+				5903077224847C34CF70C0FB /* Pods */,
+				00FFEADD38EF367C8A3F232B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		91ADED9821752C8300AD60A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91ADED9721752C8300AD60A7 /* Clutch Zip Codes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91ADED9921752C8300AD60A7 /* Clutch Zip Codes */ = {
+			isa = PBXGroup;
+			children = (
+				91ADED9A21752C8300AD60A7 /* AppDelegate.swift */,
+				91ADEDAD217531E900AD60A7 /* Model */,
+				91ADEDAC217531DE00AD60A7 /* Controllers */,
+				91ADEDAE217531F500AD60A7 /* View */,
+				91ADEDA121752C8400AD60A7 /* Assets.xcassets */,
+				91ADEDA321752C8400AD60A7 /* LaunchScreen.storyboard */,
+				91ADEDA621752C8400AD60A7 /* Info.plist */,
+			);
+			path = "Clutch Zip Codes";
+			sourceTree = "<group>";
+		};
+		91ADEDAC217531DE00AD60A7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				91ADED9C21752C8300AD60A7 /* ZipCodesViewController.swift */,
+				91ADEDB121753A3E00AD60A7 /* ZipCodeCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		91ADEDAD217531E900AD60A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91ADEDAF2175374A00AD60A7 /* ZipCode.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91ADEDAE217531F500AD60A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				91ADED9E21752C8300AD60A7 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		91ADED9621752C8300AD60A7 /* Clutch Zip Codes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91ADEDA921752C8400AD60A7 /* Build configuration list for PBXNativeTarget "Clutch Zip Codes" */;
+			buildPhases = (
+				6A0BC2977D77B160905B247D /* [CP] Check Pods Manifest.lock */,
+				91ADED9321752C8300AD60A7 /* Sources */,
+				91ADED9421752C8300AD60A7 /* Frameworks */,
+				91ADED9521752C8300AD60A7 /* Resources */,
+				7740234F9EB279E6C8D625BB /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Clutch Zip Codes";
+			productName = "Clutch Zip Codes";
+			productReference = 91ADED9721752C8300AD60A7 /* Clutch Zip Codes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91ADED8F21752C8300AD60A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Seth Mosgin";
+				TargetAttributes = {
+					91ADED9621752C8300AD60A7 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 91ADED9221752C8300AD60A7 /* Build configuration list for PBXProject "Clutch Zip Codes" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 91ADED8E21752C8300AD60A7;
+			productRefGroup = 91ADED9821752C8300AD60A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91ADED9621752C8300AD60A7 /* Clutch Zip Codes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		91ADED9521752C8300AD60A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91ADEDA521752C8400AD60A7 /* LaunchScreen.storyboard in Resources */,
+				91ADEDA221752C8400AD60A7 /* Assets.xcassets in Resources */,
+				91ADEDA021752C8300AD60A7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6A0BC2977D77B160905B247D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Clutch Zip Codes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7740234F9EB279E6C8D625BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Clutch Zip Codes/Pods-Clutch Zip Codes-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Clutch Zip Codes/Pods-Clutch Zip Codes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		91ADED9321752C8300AD60A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91ADED9D21752C8300AD60A7 /* ZipCodesViewController.swift in Sources */,
+				91ADEDB02175374A00AD60A7 /* ZipCode.swift in Sources */,
+				91ADEDB221753A3E00AD60A7 /* ZipCodeCell.swift in Sources */,
+				91ADED9B21752C8300AD60A7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		91ADED9E21752C8300AD60A7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91ADED9F21752C8300AD60A7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		91ADEDA321752C8400AD60A7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91ADEDA421752C8400AD60A7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		91ADEDA721752C8400AD60A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		91ADEDA821752C8400AD60A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		91ADEDAA21752C8400AD60A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53F9DF555AA9B4F1D14A5369 /* Pods-Clutch Zip Codes.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q97T54E4FJ;
+				INFOPLIST_FILE = "Clutch Zip Codes/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sethmosgin.Clutch-Zip-Codes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91ADEDAB21752C8400AD60A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52A3781D882B83332CF85D15 /* Pods-Clutch Zip Codes.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q97T54E4FJ;
+				INFOPLIST_FILE = "Clutch Zip Codes/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sethmosgin.Clutch-Zip-Codes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91ADED9221752C8300AD60A7 /* Build configuration list for PBXProject "Clutch Zip Codes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91ADEDA721752C8400AD60A7 /* Debug */,
+				91ADEDA821752C8400AD60A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91ADEDA921752C8400AD60A7 /* Build configuration list for PBXNativeTarget "Clutch Zip Codes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91ADEDAA21752C8400AD60A7 /* Debug */,
+				91ADEDAB21752C8400AD60A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 91ADED8F21752C8300AD60A7 /* Project object */;
+}
