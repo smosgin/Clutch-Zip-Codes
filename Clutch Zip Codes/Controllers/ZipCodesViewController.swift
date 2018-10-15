@@ -14,11 +14,15 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet var tableView: UITableView!
     @IBOutlet var zipCodeTextField: UITextField!
     
-    let API_URL = ""
-    let API_KEY = ""
+    let API_URL = "https://www.zipcodeapi.com/rest/"
+    let API_KEY = "WvwyMHS3LZYtiTiHu4UgbR9hKVC9I87SZZM0BWGgww8NiqaOFIQjf5WuTTyqq8fQ"
     
+    let defaultSession = URLSession(configuration: .default)
+    var dataTask: URLSessionDataTask?
+    var errorMessage = ""
     var zipCodesToDisplay = [ZipCode]()
-    var selectedZipCode: Int?
+    var selectedZipCode = ""
+    var selectedDistance = ""
     
     let testJSON : JSON = [
         "zip_codes": [
@@ -70,7 +74,8 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
             //Data validation
             let digitsArray = input.compactMap{ Int(String($0)) }
             if digitsArray.count == 5 {
-                //Call API with inputValue
+                //Call API with input
+                retrieveNews(url: buildURL(zip: input, distance: "10"))
                 zipCodeTextField.resignFirstResponder()
             } else {
                 let alert = UIAlertController(title: "Invalid Zip Code Format", message: "Zip code must be 5 digits (e.g. '21208')", preferredStyle: .alert)
@@ -78,6 +83,36 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
                 self.present(alert, animated: true, completion: nil)
             }
         }
+    }
+    
+    //MARK: - Perform HTTP Request
+    /***************************************************************/
+    
+    func buildURL(zip: String, distance: String) -> String {
+         return "\(API_URL)\(API_KEY)/radius.json/\(zip)/\(distance)/km"
+    }
+    
+    func retrieveNews(url: String) {
+        // If this gets called with a data task already in progress (e.g. user changes input before HTTP request finishes), cancel it
+        dataTask?.cancel()
+        
+        guard let url = URL(string: url) else { print("Exiting; Invalid URL"); return }
+        dataTask = defaultSession.dataTask(with: url) { data, response, error in
+            defer { self.dataTask = nil }
+            // 5
+            if let error = error {
+                self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
+                //Display a message to the user here for HTTP request failure
+            } else if let data = data,
+                let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
+                print(data)
+                guard let jsonData = try? JSON(data: data) else { return }
+                print(jsonData)
+                self.updateZipData(json: jsonData)
+            }
+        }
+        dataTask?.resume()
     }
     
     //MARK: - JSON Parsing
@@ -111,7 +146,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
             updateUI()
             
         } else {
-            // Would be good to have a default "API Unavailable" message here to the user
+            // Would be good to have a "JSON parsing Failure" message here to the user
         }
     }
     
