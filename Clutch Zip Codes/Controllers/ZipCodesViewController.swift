@@ -75,7 +75,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
                     
                     let item = ZipCode()
                     item.zipcode = zipCodeNumber
-                    item.distance = "\(distance)"
+                    item.distance = "\(distance) km"
                     item.city = zipcode["city"].stringValue
                     print(item.city)
                     item.state = zipcode["state"].stringValue
