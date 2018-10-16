@@ -17,14 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qw2-Xm-Ld6">
-                                <rect key="frame" x="15" y="40" width="46" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icS-JC-oBd">
                                 <rect key="frame" x="314" y="40" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="qqc-IV-194"/>
+                                    <constraint firstAttribute="width" constant="46" id="s6n-yM-nMa"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="goButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9fp-Cd-5Ma"/>
@@ -94,22 +92,52 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2d6-Y1-Bfn">
+                                <rect key="frame" x="15" y="40" width="274" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5B-Me-c6g">
+                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qw2-Xm-Ld6">
+                                        <rect key="frame" x="74.5" y="0.0" width="63" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance (km):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouv-mG-g0s">
+                                        <rect key="frame" x="137.5" y="0.0" width="111.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZaR-f6-0Fr">
+                                        <rect key="frame" x="249" y="0.0" width="25" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="2d6-Y1-Bfn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="1Gs-ty-Ytg"/>
                             <constraint firstItem="ZQq-ql-lRq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="1LK-Vh-TcA"/>
-                            <constraint firstItem="icS-JC-oBd" firstAttribute="width" secondItem="qw2-Xm-Ld6" secondAttribute="width" id="4IR-Ej-TSS"/>
+                            <constraint firstItem="2d6-Y1-Bfn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="90g-Gg-G9l"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZQq-ql-lRq" secondAttribute="bottom" constant="20" id="Jkv-9m-KYY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="icS-JC-oBd" secondAttribute="trailing" constant="15" id="SPS-P5-HsF"/>
+                            <constraint firstItem="ZQq-ql-lRq" firstAttribute="top" secondItem="2d6-Y1-Bfn" secondAttribute="bottom" constant="10" id="UZu-GV-FAx"/>
                             <constraint firstItem="icS-JC-oBd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="YfG-u2-GdS"/>
-                            <constraint firstItem="qw2-Xm-Ld6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="bNb-6N-O5Z"/>
-                            <constraint firstItem="ZQq-ql-lRq" firstAttribute="top" secondItem="qw2-Xm-Ld6" secondAttribute="bottom" constant="10" id="bR6-p1-p2f"/>
+                            <constraint firstItem="icS-JC-oBd" firstAttribute="leading" secondItem="2d6-Y1-Bfn" secondAttribute="trailing" constant="25" id="ogp-fS-7SJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZQq-ql-lRq" secondAttribute="trailing" constant="15" id="tNM-vT-W8g"/>
-                            <constraint firstItem="qw2-Xm-Ld6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ttf-5f-IZV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="distanceTextField" destination="ZaR-f6-0Fr" id="abF-ge-uKr"/>
                         <outlet property="tableView" destination="ZQq-ql-lRq" id="SQv-eV-8K5"/>
                         <outlet property="zipCodeTextField" destination="qw2-Xm-Ld6" id="Lgx-Cc-qIM"/>
                     </connections>

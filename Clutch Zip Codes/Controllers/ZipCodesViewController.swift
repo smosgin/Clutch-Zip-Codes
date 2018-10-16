@@ -13,6 +13,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var zipCodeTextField: UITextField!
+    @IBOutlet var distanceTextField: UITextField!
     
     let API_URL = "https://www.zipcodeapi.com/rest/"
     let API_KEY = "WvwyMHS3LZYtiTiHu4UgbR9hKVC9I87SZZM0BWGgww8NiqaOFIQjf5WuTTyqq8fQ"
@@ -70,12 +71,20 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @IBAction func goButtonPressed(_ sender: UIButton) {
-        if let input = zipCodeTextField.text, let inputValue = Int(input) {
-            //Data validation
+        if let input = zipCodeTextField.text, let _ = Int(input), let distance = distanceTextField.text {
+            //Data validation for distance
+            guard !distance.isEmpty else {
+                let alert = UIAlertController(title: "Invalid Distance Format", message: "Distance text field must not be empty (e.g. '10')", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            //Data validation for zip code
             let digitsArray = input.compactMap{ Int(String($0)) }
             if digitsArray.count == 5 {
                 //Call API with input
-                retrieveNews(url: buildURL(zip: input, distance: "10"))
+                retrieveNews(url: buildURL(zip: input, distance: distance))
                 zipCodeTextField.resignFirstResponder()
             } else {
                 let alert = UIAlertController(title: "Invalid Zip Code Format", message: "Zip code must be 5 digits (e.g. '21208')", preferredStyle: .alert)
