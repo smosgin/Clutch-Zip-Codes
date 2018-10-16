@@ -185,7 +185,9 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
     /***************************************************************/
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ZipCodeCell", for: indexPath) as! ZipCodeCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ZipCodeCell", for: indexPath) as? ZipCodeCell else {
+            fatalError("Cell is not of type ZipCodeCell")
+        }
         
         let item = zipCodesToDisplay[indexPath.row]
         cell.zipCodeLabel.text = item.zipcode
