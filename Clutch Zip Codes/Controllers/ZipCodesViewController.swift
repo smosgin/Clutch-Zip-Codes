@@ -64,11 +64,14 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
         updateZipData(json: testJSON)
     }
     
-    //I recommend -viewDidAppear:, since this generates animations. Generating animations in -viewWillAppear can lead to graphic artifacts, since you're not on the screen yet. Since you almost certainly want it every time you come on screen, -viewDidLoad is likely redundant (it happens every time the view is loaded from disk, which is somewhat unpredictable, so isn't a good place for visual effects).
+    //viewDidAppear, since this generates animations. Generating animations in -viewWillAppear can lead to graphic artifacts, since you're not on the screen yet. Since you almost certainly want it every time you come on screen, -viewDidLoad is likely redundant (it happens every time the view is loaded from disk, which is somewhat unpredictable, so isn't a good place for visual effects).
     override func viewDidAppear(_ animated: Bool) {
         //Tell the textField to be the first responder when the view appears so the user can start typing right away
         zipCodeTextField.becomeFirstResponder()
     }
+    
+    //MARK: - Handle User Input
+    /***************************************************************/
     
     @IBAction func goButtonPressed(_ sender: UIButton) {
         if let input = zipCodeTextField.text, let _ = Int(input), let distance = distanceTextField.text {
@@ -160,7 +163,10 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
             updateUI()
             
         } else {
-            // Would be good to have a "JSON parsing Failure" message here to the user
+            // JSON parsing failed, but HTTP request succeeded. Invalid input? Invalid API key? Requests throttled?
+            let alert = UIAlertController(title: "Reading data failed", message: "Double check your input and try again later", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
