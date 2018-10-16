@@ -84,6 +84,8 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
             let digitsArray = input.compactMap{ Int(String($0)) }
             if digitsArray.count == 5 {
                 //Call API with input
+                selectedZipCode = input
+                selectedDistance = distance
                 retrieveNews(url: buildURL(zip: input, distance: distance))
                 zipCodeTextField.resignFirstResponder()
             } else {
@@ -132,6 +134,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
         guard json["zip_codes"][0]["distance"].double != nil else { return }
         if let zipCodesJSON = json["zip_codes"].array {//Convenience provided by SwiftyJSON
             
+            zipCodesToDisplay.removeAll()
             print("\(zipCodesJSON.count) Number of zip codes")
             for zipcode in zipCodesJSON {
                 if let zipCodeNumber = zipcode["zip_code"].string {
@@ -139,6 +142,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
                     //publishedAt, urlToImage, url, author, description, source : {id, name}, title
                     guard let distance = zipcode["distance"].double else { continue }
                     
+                    if zipCodeNumber == selectedZipCode { continue }
                     let item = ZipCode()
                     item.zipcode = zipCodeNumber
                     item.distance = "\(distance) km"
