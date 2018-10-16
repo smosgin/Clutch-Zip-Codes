@@ -88,6 +88,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
                 selectedDistance = distance
                 retrieveNews(url: buildURL(zip: input, distance: distance))
                 zipCodeTextField.resignFirstResponder()
+                distanceTextField.resignFirstResponder()
             } else {
                 let alert = UIAlertController(title: "Invalid Zip Code Format", message: "Zip code must be 5 digits (e.g. '21208')", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))

@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="height" constant="30" id="qqc-IV-194"/>
                                     <constraint firstAttribute="width" constant="46" id="s6n-yM-nMa"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Go"/>
                                 <connections>
                                     <action selector="goButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9fp-Cd-5Ma"/>
                                 </connections>
@@ -40,7 +40,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vz-01-Ipt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="249" height="21.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -58,7 +58,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOr-dZ-8dO">
-                                                    <rect key="frame" x="259" y="0.0" width="71" height="21.5"/>
+                                                    <rect key="frame" x="170" y="0.0" width="160" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                                                 <constraint firstItem="cOr-dZ-8dO" firstAttribute="top" secondItem="HcY-1T-SNg" secondAttribute="top" id="NfD-Aw-ag6"/>
                                                 <constraint firstItem="6vz-01-Ipt" firstAttribute="leading" secondItem="HcY-1T-SNg" secondAttribute="leading" id="UFA-H5-qU1"/>
                                                 <constraint firstAttribute="trailing" secondItem="cOr-dZ-8dO" secondAttribute="trailing" constant="15" id="UQ3-iA-7qO"/>
-                                                <constraint firstItem="6vz-01-Ipt" firstAttribute="width" secondItem="cOr-dZ-8dO" secondAttribute="width" multiplier="3.5" id="aMc-QU-bcF"/>
+                                                <constraint firstItem="6vz-01-Ipt" firstAttribute="width" secondItem="cOr-dZ-8dO" secondAttribute="width" id="aMc-QU-bcF"/>
                                                 <constraint firstItem="7OJ-eI-YcG" firstAttribute="height" secondItem="cOr-dZ-8dO" secondAttribute="height" id="e2H-hm-UHm"/>
                                                 <constraint firstItem="7OJ-eI-YcG" firstAttribute="leading" secondItem="8RV-jt-XCF" secondAttribute="trailing" constant="10" id="ehb-LY-fkd"/>
                                                 <constraint firstItem="8RV-jt-XCF" firstAttribute="leading" secondItem="HcY-1T-SNg" secondAttribute="leading" id="jo4-6N-q3E"/>
@@ -96,24 +96,24 @@
                                 <rect key="frame" x="15" y="40" width="274" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5B-Me-c6g">
-                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qw2-Xm-Ld6">
-                                        <rect key="frame" x="74.5" y="0.0" width="63" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qw2-Xm-Ld6">
+                                        <rect key="frame" x="67" y="0.0" width="82" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance (km):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouv-mG-g0s">
-                                        <rect key="frame" x="137.5" y="0.0" width="111.5" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="149" y="0.0" width="100" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZaR-f6-0Fr">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZaR-f6-0Fr">
                                         <rect key="frame" x="249" y="0.0" width="25" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
