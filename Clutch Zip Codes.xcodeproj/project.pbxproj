@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B498FD35A7B2313EBEB059F /* Pods_Clutch_Zip_Codes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4217E06011498F3A7A5C0F12 /* Pods_Clutch_Zip_Codes.framework */; };
+		9174DECB21798E54007B40A5 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9174DECA21798E54007B40A5 /* TestData.swift */; };
 		91ADED9B21752C8300AD60A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADED9A21752C8300AD60A7 /* AppDelegate.swift */; };
 		91ADED9D21752C8300AD60A7 /* ZipCodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADED9C21752C8300AD60A7 /* ZipCodesViewController.swift */; };
 		91ADEDA021752C8300AD60A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91ADED9E21752C8300AD60A7 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		4217E06011498F3A7A5C0F12 /* Pods_Clutch_Zip_Codes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clutch_Zip_Codes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52A3781D882B83332CF85D15 /* Pods-Clutch Zip Codes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clutch Zip Codes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clutch Zip Codes/Pods-Clutch Zip Codes.release.xcconfig"; sourceTree = "<group>"; };
 		53F9DF555AA9B4F1D14A5369 /* Pods-Clutch Zip Codes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clutch Zip Codes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clutch Zip Codes/Pods-Clutch Zip Codes.debug.xcconfig"; sourceTree = "<group>"; };
+		9174DECA21798E54007B40A5 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		91ADED9721752C8300AD60A7 /* Clutch Zip Codes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clutch Zip Codes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91ADED9A21752C8300AD60A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91ADED9C21752C8300AD60A7 /* ZipCodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodesViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				91ADEDAF2175374A00AD60A7 /* ZipCode.swift */,
+				9174DECA21798E54007B40A5 /* TestData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				91ADED9D21752C8300AD60A7 /* ZipCodesViewController.swift in Sources */,
 				91ADEDB02175374A00AD60A7 /* ZipCode.swift in Sources */,
 				91ADEDB221753A3E00AD60A7 /* ZipCodeCell.swift in Sources */,
+				9174DECB21798E54007B40A5 /* TestData.swift in Sources */,
 				91ADED9B21752C8300AD60A7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

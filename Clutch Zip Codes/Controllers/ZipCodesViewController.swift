@@ -25,35 +25,6 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
     var selectedZipCode = ""
     var selectedDistance = ""
     
-    let testJSON : JSON = [
-        "zip_codes": [
-        [
-        "zip_code": "21260",
-        "distance": 3.893,
-        "city": "Baltimore",
-        "state": "MD"
-        ],
-        [
-        "zip_code": "21209",
-        "distance": 4.472,
-        "city": "Baltimore",
-        "state": "MD"
-        ],
-        [
-        "zip_code": "21208",
-        "distance": 0,
-        "city": "Pikesville",
-        "state": "MD"
-        ],
-        [
-        "zip_code": "21153",
-        "distance": 4.468,
-        "city": "Stevenson",
-        "state": "MD"
-        ]
-        ]
-    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -61,7 +32,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.rowHeight = 100
         tableView.delegate = self
         tableView.dataSource = self
-        updateZipData(json: testJSON)
+        updateZipData(json: TestData().testJSON)
     }
     
     //viewDidAppear, since this generates animations. Generating animations in -viewWillAppear can lead to graphic artifacts, since you're not on the screen yet. Since you almost certainly want it every time you come on screen, -viewDidLoad is likely redundant (it happens every time the view is loaded from disk, which is somewhat unpredictable, so isn't a good place for visual effects).
