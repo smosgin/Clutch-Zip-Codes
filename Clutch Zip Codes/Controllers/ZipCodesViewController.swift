@@ -18,8 +18,9 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
     let API_URL = "https://www.zipcodeapi.com/rest/"
     let API_KEY = "WvwyMHS3LZYtiTiHu4UgbR9hKVC9I87SZZM0BWGgww8NiqaOFIQjf5WuTTyqq8fQ"
     
-    let defaultSession = URLSession(configuration: .default)
-    var dataTask: URLSessionDataTask?
+//    let defaultSession = URLSession(configuration: .default)
+//    var dataTask: URLSessionDataTask?
+    let networkService = NetworkService()
     var errorMessage = ""
     var zipCodesToDisplay = [ZipCode]()
     var selectedZipCode = ""
@@ -60,7 +61,11 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
                 //Call API with input
                 selectedZipCode = input
                 selectedDistance = distance
-                retrieveNews(url: buildURL(zip: input, distance: distance))
+                networkService.retrieveNews(url: buildURL(zip: input, distance: distance)) { jsonData, errorMessage in
+                    if let jsonData = jsonData {
+                        self.updateZipData(json: jsonData)
+                    }
+                }
                 zipCodeTextField.resignFirstResponder()
                 distanceTextField.resignFirstResponder()
             } else {
@@ -76,29 +81,6 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func buildURL(zip: String, distance: String) -> String {
          return "\(API_URL)\(API_KEY)/radius.json/\(zip)/\(distance)/km"
-    }
-    
-    func retrieveNews(url: String) {
-        // If this gets called with a data task already in progress (e.g. user changes input before HTTP request finishes), cancel it
-        dataTask?.cancel()
-        
-        guard let url = URL(string: url) else { print("Exiting; Invalid URL"); return }
-        dataTask = defaultSession.dataTask(with: url) { data, response, error in
-            defer { self.dataTask = nil }
-            // 5
-            if let error = error {
-                self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
-                //Display a message to the user here for HTTP request failure
-            } else if let data = data,
-                let response = response as? HTTPURLResponse,
-                response.statusCode == 200 {
-                print(data)
-                guard let jsonData = try? JSON(data: data) else { return }
-                print(jsonData)
-                self.updateZipData(json: jsonData)
-            }
-        }
-        dataTask?.resume()
     }
     
     //MARK: - JSON Parsing
