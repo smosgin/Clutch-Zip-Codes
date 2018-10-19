@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 struct TestData {
-    let testJSON : JSON = [
+    static let testJSON : JSON = [
         "zip_codes": [
             [
                 "zip_code": "21260",

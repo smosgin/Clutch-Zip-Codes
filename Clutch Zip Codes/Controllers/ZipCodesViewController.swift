@@ -32,7 +32,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.rowHeight = 100
         tableView.delegate = self
         tableView.dataSource = self
-        updateZipData(json: TestData().testJSON)
+        updateZipData(json: TestData.testJSON)
     }
     
     //viewDidAppear, since this generates animations. Generating animations in -viewWillAppear can lead to graphic artifacts, since you're not on the screen yet. Since you almost certainly want it every time you come on screen, -viewDidLoad is likely redundant (it happens every time the view is loaded from disk, which is somewhat unpredictable, so isn't a good place for visual effects).
