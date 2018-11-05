@@ -10,9 +10,9 @@ import UIKit
 
 class ZipCodeCell: UITableViewCell {
     
-    @IBOutlet var zipCodeLabel: UILabel!
-    @IBOutlet var distanceLabel: UILabel!
-    @IBOutlet var cityLabel: UILabel!
-    @IBOutlet var stateLabel: UILabel!
+    @IBOutlet var zipCodeLabel: UILabel?
+    @IBOutlet var distanceLabel: UILabel?
+    @IBOutlet var cityLabel: UILabel?
+    @IBOutlet var stateLabel: UILabel?
 
 }

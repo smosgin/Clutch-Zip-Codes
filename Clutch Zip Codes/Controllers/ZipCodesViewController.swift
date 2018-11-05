@@ -11,15 +11,13 @@ import SwiftyJSON
 
 class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet var zipCodeTextField: UITextField!
-    @IBOutlet var distanceTextField: UITextField!
+    @IBOutlet var tableView: UITableView?
+    @IBOutlet var zipCodeTextField: UITextField?
+    @IBOutlet var distanceTextField: UITextField?
     
     let API_URL = "https://www.zipcodeapi.com/rest/"
     let API_KEY = "WvwyMHS3LZYtiTiHu4UgbR9hKVC9I87SZZM0BWGgww8NiqaOFIQjf5WuTTyqq8fQ"
     
-//    let defaultSession = URLSession(configuration: .default)
-//    var dataTask: URLSessionDataTask?
     let networkService = NetworkService()
     var errorMessage = ""
     var zipCodesToDisplay = [ZipCode]()
@@ -30,23 +28,23 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        tableView.rowHeight = 100
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView?.rowHeight = 100
+        tableView?.delegate = self
+        tableView?.dataSource = self
         updateZipData(json: TestData.testJSON)
     }
     
     //viewDidAppear, since this generates animations. Generating animations in -viewWillAppear can lead to graphic artifacts, since you're not on the screen yet. Since you almost certainly want it every time you come on screen, -viewDidLoad is likely redundant (it happens every time the view is loaded from disk, which is somewhat unpredictable, so isn't a good place for visual effects).
     override func viewDidAppear(_ animated: Bool) {
         //Tell the textField to be the first responder when the view appears so the user can start typing right away
-        zipCodeTextField.becomeFirstResponder()
+        zipCodeTextField?.becomeFirstResponder()
     }
     
     //MARK: - Handle User Input
     /***************************************************************/
     
     @IBAction func goButtonPressed(_ sender: UIButton) {
-        if let input = zipCodeTextField.text, let _ = Int(input), let distance = distanceTextField.text {
+        if let input = zipCodeTextField?.text, let _ = Int(input), let distance = distanceTextField?.text {
             //Data validation for distance
             guard !distance.isEmpty else {
                 let alert = UIAlertController(title: "Invalid Distance Format", message: "Distance text field must not be empty (e.g. '10')", preferredStyle: .alert)
@@ -66,8 +64,8 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
                         self.updateZipData(json: jsonData)
                     }
                 }
-                zipCodeTextField.resignFirstResponder()
-                distanceTextField.resignFirstResponder()
+                zipCodeTextField?.resignFirstResponder()
+                distanceTextField?.resignFirstResponder()
             } else {
                 let alert = UIAlertController(title: "Invalid Zip Code Format", message: "Zip code must be 5 digits (e.g. '21208')", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
@@ -130,7 +128,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
         // Update the UI/TableView on the main thread
         print("Update UI Called")
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.tableView?.reloadData()
         }
     }
     
@@ -143,10 +141,10 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         let item = zipCodesToDisplay[indexPath.row]
-        cell.zipCodeLabel.text = item.zipcode
-        cell.distanceLabel.text = item.distance
-        cell.cityLabel.text = item.city
-        cell.stateLabel.text = item.state
+        cell.zipCodeLabel?.text = item.zipcode
+        cell.distanceLabel?.text = item.distance
+        cell.cityLabel?.text = item.city
+        cell.stateLabel?.text = item.state
         
         return cell
     }
