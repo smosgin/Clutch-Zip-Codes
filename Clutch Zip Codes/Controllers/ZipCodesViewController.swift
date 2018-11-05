@@ -97,6 +97,14 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
                     //publishedAt, urlToImage, url, author, description, source : {id, name}, title
                     guard let distance = zipcode["distance"].double else { continue }
                     
+                    if zipCodeNumber == selectedZipCode && zipCodesJSON.count == 1 {
+                        //Display an alert so the user doesn't see an empty screen with no feedback
+                        DispatchQueue.main.async {
+                            let alert = UIAlertController(title: "No other Zip Codes in Radius", message: "Try increasing the radius to see more results.", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
                     if zipCodeNumber == selectedZipCode { continue }
                     let item = ZipCode()
                     item.zipcode = zipCodeNumber
@@ -110,6 +118,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
                     continue
                 }
             }
+            print("exited for loop")
             
             updateUI()
             
