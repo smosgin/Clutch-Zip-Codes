@@ -34,8 +34,8 @@ Some possible improvements to the project include, but are not limited to:
 
 1. Make the UI more attractive with AutoLayout and colors
 2. Display networking progress in a user friendly manner (like a progress indicator)
-3. Follow design standards more closely by abstracting networking calls into a separate class
-4. Research better ways to implement the API Key within the code
+3. Research better ways to implement the API Key within the code
+4. Discuss with Ben whether JSON parsing should occur in ViewController or in a separate dependency.
 
 
 

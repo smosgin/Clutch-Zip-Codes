@@ -105,7 +105,6 @@
 				91ADED9C21752C8300AD60A7 /* ZipCodesViewController.swift */,
 				914165AF21913F62005BC188 /* ZipCodesDataSource.swift */,
 				9174DECC217995F6007B40A5 /* NetworkService.swift */,
-				91ADEDB121753A3E00AD60A7 /* ZipCodeCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -122,6 +121,7 @@
 		91ADEDAE217531F500AD60A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				91ADEDB121753A3E00AD60A7 /* ZipCodeCell.swift */,
 				91ADED9E21752C8300AD60A7 /* Main.storyboard */,
 			);
 			path = View;
