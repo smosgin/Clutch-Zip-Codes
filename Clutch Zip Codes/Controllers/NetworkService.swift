@@ -9,14 +9,20 @@
 import Foundation
 import SwiftyJSON
 
-class NetworkService {
+protocol NetworkService {
+    
+    func retrieveContents(url: String, completion: @escaping (JSON?, String) -> ())
+    
+}
+
+class ZipCodesAPIService: NetworkService {
     
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
     
     var errorMessage = ""
     
-    func retrieveNews(url: String, completion: @escaping (JSON?, String) -> ()) {
+    func retrieveContents(url: String, completion: @escaping (JSON?, String) -> ()) {
         // If this gets called with a data task already in progress (e.g. user changes input before HTTP request finishes), cancel it
         dataTask?.cancel()
         

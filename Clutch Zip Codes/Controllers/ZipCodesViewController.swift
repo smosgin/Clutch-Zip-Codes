@@ -18,7 +18,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
     let API_URL = "https://www.zipcodeapi.com/rest/"
     let API_KEY = "WvwyMHS3LZYtiTiHu4UgbR9hKVC9I87SZZM0BWGgww8NiqaOFIQjf5WuTTyqq8fQ"
     
-    let networkService = NetworkService()
+    var networkService: NetworkService?
     var errorMessage = ""
     var zipCodesToDisplay = [ZipCode]()
     var selectedZipCode = ""
@@ -59,7 +59,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
                 //Call API with input
                 selectedZipCode = input
                 selectedDistance = distance
-                networkService.retrieveNews(url: buildURL(zip: input, distance: distance)) { jsonData, errorMessage in
+                networkService?.retrieveContents(url: buildURL(zip: input, distance: distance)) { jsonData, errorMessage in
                     if let jsonData = jsonData {
                         self.updateZipData(json: jsonData)
                     }
@@ -118,7 +118,6 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
                     continue
                 }
             }
-            print("exited for loop")
             
             updateUI()
             

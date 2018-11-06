@@ -16,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let vc = window?.rootViewController as? ZipCodesViewController {
+            vc.networkService = ZipCodesAPIService()
+        }
+        
         return true
     }
 
