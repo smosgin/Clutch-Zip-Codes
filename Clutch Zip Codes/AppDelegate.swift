@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let vc = window?.rootViewController as? ZipCodesViewController {
             vc.networkService = ZipCodesAPIService()
+            vc.dataSource = ZipCodesDataSource()
         }
         
         return true

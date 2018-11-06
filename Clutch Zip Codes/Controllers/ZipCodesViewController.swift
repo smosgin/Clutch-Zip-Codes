@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ZipCodesViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView?
     @IBOutlet var zipCodeTextField: UITextField?
@@ -19,8 +19,8 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
     let API_KEY = "WvwyMHS3LZYtiTiHu4UgbR9hKVC9I87SZZM0BWGgww8NiqaOFIQjf5WuTTyqq8fQ"
     
     var networkService: NetworkService?
+    var dataSource: ZipCodesDataSource?
     var errorMessage = ""
-    var zipCodesToDisplay = [ZipCode]()
     var selectedZipCode = ""
     var selectedDistance = ""
     
@@ -29,8 +29,8 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
         // Do any additional setup after loading the view, typically from a nib.
         
         tableView?.rowHeight = 100
-        tableView?.delegate = self
-        tableView?.dataSource = self
+        tableView?.delegate = dataSource
+        tableView?.dataSource = dataSource
         updateZipData(json: TestData.testJSON)
     }
     
@@ -89,7 +89,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
         guard json["zip_codes"][0]["distance"].double != nil else { return }
         if let zipCodesJSON = json["zip_codes"].array {//Convenience provided by SwiftyJSON
             
-            zipCodesToDisplay.removeAll()
+            dataSource?.zipCodesToDisplay.removeAll()
             print("\(zipCodesJSON.count) Number of zip codes")
             for zipcode in zipCodesJSON {
                 if let zipCodeNumber = zipcode["zip_code"].string {
@@ -113,7 +113,7 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
                     print(item.city)
                     item.state = zipcode["state"].stringValue
                     
-                    zipCodesToDisplay.append(item)
+                    dataSource?.zipCodesToDisplay.append(item)
                 } else {
                     continue
                 }
@@ -138,27 +138,6 @@ class ZipCodesViewController: UIViewController, UITableViewDataSource, UITableVi
         DispatchQueue.main.async {
             self.tableView?.reloadData()
         }
-    }
-    
-    //MARK: - TableView Datasource Methods
-    /***************************************************************/
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ZipCodeCell", for: indexPath) as? ZipCodeCell else {
-            fatalError("Cell is not of type ZipCodeCell")
-        }
-        
-        let item = zipCodesToDisplay[indexPath.row]
-        cell.zipCodeLabel?.text = item.zipcode
-        cell.distanceLabel?.text = item.distance
-        cell.cityLabel?.text = item.city
-        cell.stateLabel?.text = item.state
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return zipCodesToDisplay.count
     }
 
 
