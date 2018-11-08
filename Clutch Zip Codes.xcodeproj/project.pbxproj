@@ -18,7 +18,18 @@
 		91ADEDA521752C8400AD60A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91ADEDA321752C8400AD60A7 /* LaunchScreen.storyboard */; };
 		91ADEDB02175374A00AD60A7 /* ZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADEDAF2175374A00AD60A7 /* ZipCode.swift */; };
 		91ADEDB221753A3E00AD60A7 /* ZipCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADEDB121753A3E00AD60A7 /* ZipCodeCell.swift */; };
+		91B4FC532194C2FF00B247FA /* Clutch_Zip_CodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4FC522194C2FF00B247FA /* Clutch_Zip_CodesTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		91B4FC552194C2FF00B247FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91ADED8F21752C8300AD60A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91ADED9621752C8300AD60A7;
+			remoteInfo = "Clutch Zip Codes";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4217E06011498F3A7A5C0F12 /* Pods_Clutch_Zip_Codes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clutch_Zip_Codes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +47,9 @@
 		91ADEDA621752C8400AD60A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91ADEDAF2175374A00AD60A7 /* ZipCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCode.swift; sourceTree = "<group>"; };
 		91ADEDB121753A3E00AD60A7 /* ZipCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeCell.swift; sourceTree = "<group>"; };
+		91B4FC502194C2FF00B247FA /* Clutch Zip CodesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clutch Zip CodesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		91B4FC522194C2FF00B247FA /* Clutch_Zip_CodesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clutch_Zip_CodesTests.swift; sourceTree = "<group>"; };
+		91B4FC542194C2FF00B247FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +58,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B498FD35A7B2313EBEB059F /* Pods_Clutch_Zip_Codes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91B4FC4D2194C2FF00B247FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				91ADED9921752C8300AD60A7 /* Clutch Zip Codes */,
+				91B4FC512194C2FF00B247FA /* Clutch Zip CodesTests */,
 				91ADED9821752C8300AD60A7 /* Products */,
 				5903077224847C34CF70C0FB /* Pods */,
 				00FFEADD38EF367C8A3F232B /* Frameworks */,
@@ -81,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				91ADED9721752C8300AD60A7 /* Clutch Zip Codes.app */,
+				91B4FC502194C2FF00B247FA /* Clutch Zip CodesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +150,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		91B4FC512194C2FF00B247FA /* Clutch Zip CodesTests */ = {
+			isa = PBXGroup;
+			children = (
+				91B4FC522194C2FF00B247FA /* Clutch_Zip_CodesTests.swift */,
+				91B4FC542194C2FF00B247FA /* Info.plist */,
+			);
+			path = "Clutch Zip CodesTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,6 +181,24 @@
 			productReference = 91ADED9721752C8300AD60A7 /* Clutch Zip Codes.app */;
 			productType = "com.apple.product-type.application";
 		};
+		91B4FC4F2194C2FF00B247FA /* Clutch Zip CodesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91B4FC592194C2FF00B247FA /* Build configuration list for PBXNativeTarget "Clutch Zip CodesTests" */;
+			buildPhases = (
+				91B4FC4C2194C2FF00B247FA /* Sources */,
+				91B4FC4D2194C2FF00B247FA /* Frameworks */,
+				91B4FC4E2194C2FF00B247FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91B4FC562194C2FF00B247FA /* PBXTargetDependency */,
+			);
+			name = "Clutch Zip CodesTests";
+			productName = "Clutch Zip CodesTests";
+			productReference = 91B4FC502194C2FF00B247FA /* Clutch Zip CodesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,6 +211,10 @@
 				TargetAttributes = {
 					91ADED9621752C8300AD60A7 = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					91B4FC4F2194C2FF00B247FA = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 91ADED9621752C8300AD60A7;
 					};
 				};
 			};
@@ -178,6 +232,7 @@
 			projectRoot = "";
 			targets = (
 				91ADED9621752C8300AD60A7 /* Clutch Zip Codes */,
+				91B4FC4F2194C2FF00B247FA /* Clutch Zip CodesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -190,6 +245,13 @@
 				91ADEDA521752C8400AD60A7 /* LaunchScreen.storyboard in Resources */,
 				91ADEDA221752C8400AD60A7 /* Assets.xcassets in Resources */,
 				91ADEDA021752C8300AD60A7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91B4FC4E2194C2FF00B247FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +319,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		91B4FC4C2194C2FF00B247FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91B4FC532194C2FF00B247FA /* Clutch_Zip_CodesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		91B4FC562194C2FF00B247FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91ADED9621752C8300AD60A7 /* Clutch Zip Codes */;
+			targetProxy = 91B4FC552194C2FF00B247FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		91ADED9E21752C8300AD60A7 /* Main.storyboard */ = {
@@ -433,6 +511,46 @@
 			};
 			name = Release;
 		};
+		91B4FC572194C2FF00B247FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q97T54E4FJ;
+				INFOPLIST_FILE = "Clutch Zip CodesTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sethmosgin.Clutch-Zip-CodesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clutch Zip Codes.app/Clutch Zip Codes";
+			};
+			name = Debug;
+		};
+		91B4FC582194C2FF00B247FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q97T54E4FJ;
+				INFOPLIST_FILE = "Clutch Zip CodesTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sethmosgin.Clutch-Zip-CodesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clutch Zip Codes.app/Clutch Zip Codes";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -450,6 +568,15 @@
 			buildConfigurations = (
 				91ADEDAA21752C8400AD60A7 /* Debug */,
 				91ADEDAB21752C8400AD60A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91B4FC592194C2FF00B247FA /* Build configuration list for PBXNativeTarget "Clutch Zip CodesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91B4FC572194C2FF00B247FA /* Debug */,
+				91B4FC582194C2FF00B247FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
