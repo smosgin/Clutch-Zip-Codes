@@ -85,48 +85,65 @@ class ZipCodesViewController: UIViewController {
     /***************************************************************/
     
     func updateZipData(json : JSON) {
-        //We could get a situation where the connection was successful but the App key was invalid
-        guard json["zip_codes"][0]["distance"].double != nil else { return }
-        if let zipCodesJSON = json["zip_codes"].array {//Convenience provided by SwiftyJSON
-            
-            dataSource?.zipCodesToDisplay.removeAll()
-            print("\(zipCodesJSON.count) Number of zip codes")
-            for zipcode in zipCodesJSON {
-                if let zipCodeNumber = zipcode["zip_code"].string {
-                    print(zipCodeNumber)
-                    //publishedAt, urlToImage, url, author, description, source : {id, name}, title
-                    guard let distance = zipcode["distance"].double else { continue }
-                    
-                    if zipCodeNumber == selectedZipCode && zipCodesJSON.count == 1 {
-                        //Display an alert so the user doesn't see an empty screen with no feedback
-                        DispatchQueue.main.async {
-                            let alert = UIAlertController(title: "No other Zip Codes in Radius", message: "Try increasing the radius to see more results.", preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-                            self.present(alert, animated: true, completion: nil)
-                        }
-                    }
-                    if zipCodeNumber == selectedZipCode { continue }
-                    let item = ZipCode()
-                    item.zipcode = zipCodeNumber
-                    item.distance = "\(distance) km"
-                    item.city = zipcode["city"].stringValue
-                    print(item.city)
-                    item.state = zipcode["state"].stringValue
-                    
-                    dataSource?.zipCodesToDisplay.append(item)
-                } else {
-                    continue
-                }
-            }
-            
-            updateUI()
-            
-        } else {
+        guard let dataSource = dataSource else { return }
+        dataSource.zipCodesToDisplay.removeAll()
+        dataSource.zipCodesToDisplay = ZipCode.zipCodes(jsonObject: json)
+        if dataSource.zipCodesToDisplay.isEmpty {
             // JSON parsing failed, but HTTP request succeeded. Invalid input? Invalid API key? Requests throttled?
-            let alert = UIAlertController(title: "Reading data failed", message: "Double check your input and try again later", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Reading data failed", message: "Double check your input and try again later", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        } else if dataSource.zipCodesToDisplay.count == 1 && dataSource.zipCodesToDisplay[0].zipcode == selectedZipCode {
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "No other Zip Codes in Radius", message: "Try increasing the radius to see more results.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
+        updateUI()
+//        //We could get a situation where the connection was successful but the App key was invalid
+//        guard json["zip_codes"][0]["distance"].double != nil else { return }
+//        if let zipCodesJSON = json["zip_codes"].array {//Convenience provided by SwiftyJSON
+//
+//            dataSource?.zipCodesToDisplay.removeAll()
+//            print("\(zipCodesJSON.count) Number of zip codes")
+//            for zipcode in zipCodesJSON {
+//                if let zipCodeNumber = zipcode["zip_code"].string {
+//                    print(zipCodeNumber)
+//                    guard let distance = zipcode["distance"].double else { continue }
+//
+//                    if zipCodeNumber == selectedZipCode && zipCodesJSON.count == 1 {
+//                        //Display an alert so the user doesn't see an empty screen with no feedback
+//                        DispatchQueue.main.async {
+//                            let alert = UIAlertController(title: "No other Zip Codes in Radius", message: "Try increasing the radius to see more results.", preferredStyle: .alert)
+//                            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+//                            self.present(alert, animated: true, completion: nil)
+//                        }
+//                    }
+//                    if zipCodeNumber == selectedZipCode { continue }
+//                    var item = ZipCode()
+//                    item.zipcode = zipCodeNumber
+//                    item.distance = "\(distance) km"
+//                    item.city = zipcode["city"].stringValue
+//                    print(item.city)
+//                    item.state = zipcode["state"].stringValue
+//
+//                    dataSource?.zipCodesToDisplay.append(item)
+//                } else {
+//                    continue
+//                }
+//            }
+//
+//            updateUI()
+//
+//        } else {
+//            // JSON parsing failed, but HTTP request succeeded. Invalid input? Invalid API key? Requests throttled?
+//            let alert = UIAlertController(title: "Reading data failed", message: "Double check your input and try again later", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+//        }
     }
     
     //MARK: - Update UI
