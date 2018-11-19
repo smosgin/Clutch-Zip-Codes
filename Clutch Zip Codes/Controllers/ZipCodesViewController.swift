@@ -81,7 +81,7 @@ class ZipCodesViewController: UIViewController {
          return "\(API_URL)\(API_KEY)/radius.json/\(zip)/\(distance)/km"
     }
     
-    //MARK: - JSON Parsing
+    //MARK: - Updating User of results
     /***************************************************************/
     
     func updateZipData(json : JSON) {
@@ -102,48 +102,8 @@ class ZipCodesViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        dataSource.zipCodesToDisplay = dataSource.zipCodesToDisplay.filter { $0.zipcode != selectedZipCode }
         updateUI()
-//        //We could get a situation where the connection was successful but the App key was invalid
-//        guard json["zip_codes"][0]["distance"].double != nil else { return }
-//        if let zipCodesJSON = json["zip_codes"].array {//Convenience provided by SwiftyJSON
-//
-//            dataSource?.zipCodesToDisplay.removeAll()
-//            print("\(zipCodesJSON.count) Number of zip codes")
-//            for zipcode in zipCodesJSON {
-//                if let zipCodeNumber = zipcode["zip_code"].string {
-//                    print(zipCodeNumber)
-//                    guard let distance = zipcode["distance"].double else { continue }
-//
-//                    if zipCodeNumber == selectedZipCode && zipCodesJSON.count == 1 {
-//                        //Display an alert so the user doesn't see an empty screen with no feedback
-//                        DispatchQueue.main.async {
-//                            let alert = UIAlertController(title: "No other Zip Codes in Radius", message: "Try increasing the radius to see more results.", preferredStyle: .alert)
-//                            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-//                            self.present(alert, animated: true, completion: nil)
-//                        }
-//                    }
-//                    if zipCodeNumber == selectedZipCode { continue }
-//                    var item = ZipCode()
-//                    item.zipcode = zipCodeNumber
-//                    item.distance = "\(distance) km"
-//                    item.city = zipcode["city"].stringValue
-//                    print(item.city)
-//                    item.state = zipcode["state"].stringValue
-//
-//                    dataSource?.zipCodesToDisplay.append(item)
-//                } else {
-//                    continue
-//                }
-//            }
-//
-//            updateUI()
-//
-//        } else {
-//            // JSON parsing failed, but HTTP request succeeded. Invalid input? Invalid API key? Requests throttled?
-//            let alert = UIAlertController(title: "Reading data failed", message: "Double check your input and try again later", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-//            self.present(alert, animated: true, completion: nil)
-//        }
     }
     
     //MARK: - Update UI
